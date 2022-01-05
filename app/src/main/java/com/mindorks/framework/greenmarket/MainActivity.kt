@@ -3,6 +3,7 @@ package com.mindorks.framework.greenmarket
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Icon
@@ -33,8 +34,14 @@ class MainActivity : ComponentActivity() {
 fun Greeting(name: String) {
     Row(){
         Icon(painter=painterResource(id = R.drawable.menu), contentDescription = "menu",
-            modifier = Modifier.size(45.dp))
+            modifier = Modifier.size(30.dp))
         Text(text = "GreenMarket")
+        Icon(painter=painterResource(id = R.drawable.grocery), contentDescription = "grocery",
+            modifier = Modifier.size(20.dp))
+    Column() {
+        Text(text = "Online Delivery", modifier = Modifier.firstBaselineToTop(32.dp))
+    }
+
     }
     
 }
