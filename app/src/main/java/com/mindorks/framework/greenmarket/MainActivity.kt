@@ -1,18 +1,19 @@
 package com.mindorks.framework.greenmarket
 
+import android.graphics.fonts.FontFamily
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.mindorks.framework.greenmarket.ui.theme.GreenMarketTheme
@@ -32,18 +33,67 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String) {
-    Row(){
-        Icon(painter=painterResource(id = R.drawable.menu), contentDescription = "menu",
-            modifier = Modifier.size(30.dp))
-        Text(text = "GreenMarket")
-        Icon(painter=painterResource(id = R.drawable.grocery), contentDescription = "grocery",
-            modifier = Modifier.size(20.dp))
     Column() {
-        Text(text = "Online Delivery", modifier = Modifier.firstBaselineToTop(32.dp))
-    }
+        Row(
+            horizontalArrangement = Arrangement.SpaceBetween,
+            modifier = Modifier.fillMaxWidth()
+        ){
+            Icon(painter=painterResource(id = R.drawable.menu), contentDescription = "menu",
+                modifier = Modifier.size(20.dp))
+            Text(text = "GreenMarket")
+            Icon(painter=painterResource(id = R.drawable.grocery), contentDescription = "grocery",
+                modifier = Modifier.size(20.dp))
+
+
+
+        }
+
+        Column() {
+            Row(
+                horizontalArrangement = Arrangement.SpaceBetween,
+                modifier = Modifier.fillMaxWidth()
+            ){
+                Text(text = "Online Delivery")
+
+            }
+
+        }
+
+
+        Column() {
+            Row(
+                horizontalArrangement = Arrangement.SpaceBetween,
+                modifier = Modifier.fillMaxWidth()
+            ){
+                Icon(painter = painterResource(id = R.drawable.location), contentDescription = "location",
+                    modifier = Modifier.size(20.dp))
+                Text(text = "Current Location")
+                Text(text = "Select Current Location",
+                    color = MaterialTheme.colors.primaryVariant)
+
+            }
+
+        }
+
+        Row(
+            horizontalArrangement = Arrangement.SpaceBetween,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(text = "Please Enter Your Location")
+
+        }
+        Row(
+            horizontalArrangement = Arrangement.SpaceBetween,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+
+            Text(text = "So that we can offer you a list of available supermarkets",
+            fontStyle = )
+        }
 
     }
-    
+
+
 }
 
 @Preview(showBackground = true)
